@@ -8,6 +8,8 @@ Inspired by [this post on Reddit](https://www.reddit.com/r/oddlysatisfying/comme
 
 In the project directory, you can run:
 
+### `npm install`
+
 ### `npm start`
 
 Runs the app in the development mode.\

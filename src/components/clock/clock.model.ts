@@ -1,6 +1,7 @@
 export interface IClockProps {
-  hours: number;
-  minutes: number;
+  hoursAngle: number;
+  minutesAngle: number;
+  digit: number;
 }
 
 export interface IClockState {

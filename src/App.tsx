@@ -21,14 +21,14 @@ class App extends Component<{}, IAppState> {
   }
 
   componentDidMount(): void {
-    this.intervalId = setInterval(() => this.calculateClockDigits(), 1000);
+    this.intervalId = setInterval(() => this.updateClockDigits(), 1000);
   }
 
   componentWillUnmount(): void {
     clearInterval(this.intervalId);
   }
 
-  private calculateClockDigits(): void {
+  private updateClockDigits(): void {
     const now: Date = new Date();
 
     this.setState({

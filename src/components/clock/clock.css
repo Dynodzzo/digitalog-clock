@@ -2,7 +2,7 @@
   border-radius: 100%;
   background: transparent;
   font-family: "Montserrat";
-  border: 2px solid white;
+  border: 1.5px solid white;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
   /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
 }
@@ -10,14 +10,14 @@
 .wrap {
   overflow: hidden;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 100%;
 }
 
 .hours, .minutes {
   position: absolute;
-  background-color: black;
+  background-color: rgb(43, 43, 43);;
   margin: auto;
   left: 0;
   bottom: 0;
@@ -31,12 +31,12 @@
   top: -35%;
   width: 4px;
   height: 35%;
-  background-color: black;
+  background-color: rgb(43, 43, 43);
 }
 
 .minutes {
   top: -46%;
-  width: 3px;
+  width: 4px;
   height: 46%;
 }
 
@@ -46,10 +46,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: 8px;
-  height: 8px;
-  background: white;
-  border: 2px solid #1b1b1b;
+  width: 4px;
+  height: 4px;
+  background: rgb(43, 43, 43);;
+  /* border: 1px solid rgb(43, 43, 43);; */
   border-radius: 100%;
   margin: auto;
 }

@@ -1,7 +1,8 @@
 import { Component } from "react";
 import { IClockProps, IClockState } from "./clock.model";
+import { randomInt } from "../../shared/utils";
+import { MAX_SPINS, MIN_SPINS } from "../../shared/constants";
 import './clock.css';
-import { MAX_SPINS } from "../../shared/constants";
 
 class Clock extends Component<IClockProps, IClockState> {
 
@@ -15,28 +16,24 @@ class Clock extends Component<IClockProps, IClockState> {
   }
 
   componentDidUpdate(oldProps: IClockProps): void {
-    if (oldProps.hours !== this.props.hours || oldProps.minutes !== this.props.minutes) {
-      this.randomizeSpin();
+    if (oldProps.digit !== this.props.digit) {
+      this.setState({
+        randomSpinHours: this.getRandomSpin(),
+        randomSpinMinutes: this.getRandomSpin()
+      });
     }
   }
 
-  private randomizeSpin(): void {
-    const randomSpinHours: number = Math.floor(Math.random() * MAX_SPINS);
-    const randomSpinMinutes: number = Math.floor(Math.random() * MAX_SPINS);
-
-    this.setState({
-      randomSpinHours,
-      randomSpinMinutes
-    });
-
+  private getRandomSpin(): number {
+    return randomInt(MIN_SPINS, MAX_SPINS);
   }
 
   render() {
     return (
       <div className="clock">
         <div className="wrap">
-          <span className="hours" style={{ transform: `rotate(${this.props.hours + (this.state.randomSpinHours * 360)}deg)` }}></span>
-          <span className="minutes" style={{ transform: `rotate(${this.props.minutes + (this.state.randomSpinMinutes * 360)}deg)` }}></span>
+          <span className="hours" style={{ transform: `rotate(${this.props.hoursAngle + (this.state.randomSpinHours * 360)}deg)` }}></span>
+          <span className="minutes" style={{ transform: `rotate(${this.props.minutesAngle - (this.state.randomSpinMinutes * 360)}deg)` }}></span>
           <span className="dot"></span>
         </div>
       </div>

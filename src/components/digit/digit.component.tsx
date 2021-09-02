@@ -32,13 +32,13 @@ class Digit extends Component<IDigitProps, IDigitState> {
       <div className="digit">
         {this.state.clocksRotations.map((clocksRotationsLine: IClockRotation[], clocksRotationsLineIndex: number) => {
           return <div key={`clockLine-${clocksRotationsLineIndex}`} className="clocksRow">
-            {
-              clocksRotationsLine.map((clockRotation: IClockRotation, clocksRotationsIndex: number) => {
-                return <Clock
-                  key={`clock-${clocksRotationsLineIndex}${clocksRotationsIndex}`}
-                  hours={clockRotation.hours}
-                  minutes={clockRotation.minutes} />
-              })
+            {clocksRotationsLine.map((clockRotation: IClockRotation, clocksRotationsIndex: number) => {
+              return <Clock
+                key={`clock-${clocksRotationsLineIndex}${clocksRotationsIndex}`}
+                hoursAngle={clockRotation.hours}
+                minutesAngle={clockRotation.minutes}
+                digit={this.props.value} />
+            })
             }
           </div>
         })}
