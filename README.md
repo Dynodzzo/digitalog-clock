@@ -1,7 +1,8 @@
 # Digitalog clock
 
 A digital clock made of analog clocks, in React.
-Inspired by [https://www.reddit.com/r/oddlysatisfying/comments/paitjp/a_digital_clock_made_of_analogs/](this post on Reddit).
+
+Inspired by [this post on Reddit](https://www.reddit.com/r/oddlysatisfying/comments/paitjp/a_digital_clock_made_of_analogs/).
 
 ## How to start
 
