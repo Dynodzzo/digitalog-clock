@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { IClockProps, IClockState } from "./clock.model";
 import { randomInt } from "../../shared/utils";
-import { MAX_SPINS, MIN_SPINS } from "../../shared/constants";
+import { MAX_SPINS_ITERATIONS, MAX_SPINS, MIN_SPINS } from "../../shared/constants";
 import './clock.css';
 
 class Clock extends Component<IClockProps, IClockState> {
@@ -10,30 +10,41 @@ class Clock extends Component<IClockProps, IClockState> {
     super(props);
 
     this.state = {
-      randomSpinHours: 0,
-      randomSpinMinutes: 0
+      randomSpinsHours: 0,
+      randomSpinsMinutes: 0
     };
   }
 
   componentDidUpdate(oldProps: IClockProps): void {
     if (oldProps.digit !== this.props.digit) {
-      this.setState({
-        randomSpinHours: this.getRandomSpin(),
-        randomSpinMinutes: this.getRandomSpin()
-      });
+      const randomSpinsHours: number = this.getRandomSpin(this.state.randomSpinsHours);
+      const randomSpinsMinutes: number = this.getRandomSpin(this.state.randomSpinsMinutes);
+
+      this.setState({ randomSpinsHours, randomSpinsMinutes });
     }
   }
 
-  private getRandomSpin(): number {
-    return randomInt(MIN_SPINS, MAX_SPINS);
+  private getRandomSpin(previousSpin: number): number {
+    let currentSpin: number = previousSpin;
+    let randomSpinCount: number = 0;
+
+    while (currentSpin === previousSpin && randomSpinCount < MAX_SPINS_ITERATIONS) {
+      currentSpin = randomInt(MIN_SPINS, MAX_SPINS);
+      randomSpinCount++;
+    }
+
+    return currentSpin;
   }
 
   render() {
+    const newRotationAngleHours: number = this.props.hoursAngle + (this.state.randomSpinsHours * 360);
+    const newRotationAngleMinutes: number = this.props.minutesAngle + (this.state.randomSpinsMinutes * 360);
+
     return (
       <div className="clock">
         <div className="wrap">
-          <span className="hours" style={{ transform: `rotate(${this.props.hoursAngle + (this.state.randomSpinHours * 360)}deg)` }}></span>
-          <span className="minutes" style={{ transform: `rotate(${this.props.minutesAngle - (this.state.randomSpinMinutes * 360)}deg)` }}></span>
+          <span className="hours" style={{ transform: `rotate(${newRotationAngleHours}deg)` }}></span>
+          <span className="minutes" style={{ transform: `rotate(${newRotationAngleMinutes}deg)` }}></span>
           <span className="dot"></span>
         </div>
       </div>

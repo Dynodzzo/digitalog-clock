@@ -5,6 +5,6 @@ export interface IClockProps {
 }
 
 export interface IClockState {
-  randomSpinHours: number;
-  randomSpinMinutes: number;
+  randomSpinsHours: number;
+  randomSpinsMinutes: number;
 }

@@ -17,14 +17,14 @@
 
 .hours, .minutes {
   position: absolute;
-  background-color: rgb(43, 43, 43);;
+  background-color: rgb(43, 43, 43);
   margin: auto;
   left: 0;
   bottom: 0;
   right: 0;
   transform-origin: bottom center;
   transform: rotate(0);
-  transition: transform 6s ease-in-out;
+  transition: transform 5s ease-in-out;
 }
 
 .hours {
