@@ -1,4 +1,4 @@
-import { IClockRotation } from "../../shared/models/clock.model";
+import { IClockRotation } from "../../shared/models/clock-rotation.model";
 
 export interface IDigitProps {
   value: number;

@@ -1,3 +1,9 @@
+.digit {
+  display: flex;
+  flex-direction: column;
+}
+
 .clocksRow {
   display: flex;
+  flex-direction: row;
 }

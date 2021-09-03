@@ -6,8 +6,3 @@
   height: 100vh;
   background-color: lavender;
 }
-
-.digits {
-  display: flex;
-  flex-direction: row;
-}

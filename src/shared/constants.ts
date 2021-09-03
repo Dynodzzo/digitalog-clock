@@ -1,4 +1,4 @@
-import { ClockRotationType, IClockRotation } from "./models/clock.model";
+import { ClockRotationType, IClockRotation } from "./models/clock-rotation.model";
 
 export const MAX_SPINS: number = 3;
 export const MIN_SPINS: number = 1;

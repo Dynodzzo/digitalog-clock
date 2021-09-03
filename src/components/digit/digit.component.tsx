@@ -2,7 +2,7 @@ import { Component } from "react";
 import { IDigitProps, IDigitState } from "./digit.model";
 import Clock from "../clock/clock.component";
 import { ClockDigits } from "../../shared/constants";
-import { IClockRotation } from "../../shared/models/clock.model";
+import { IClockRotation } from "../../shared/models/clock-rotation.model";
 import './digit.css';
 
 class Digit extends Component<IDigitProps, IDigitState> {
