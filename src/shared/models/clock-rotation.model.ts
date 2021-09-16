@@ -4,6 +4,16 @@ export enum ClockRotationType {
 
 export interface IClockRotation {
   type: ClockRotationType;
-  minutes: number;
   hours: number;
+  minutes: number;
+}
+
+export interface IClockState {
+  rotation: IClockRotation;
+  spins: IClockSpin;
+}
+
+export interface IClockSpin {
+  hours: number;
+  minutes: number;
 }

@@ -1,9 +1,5 @@
-import { IClockRotation } from "../../shared/models/clock-rotation.model";
+import { IClockState } from "../../shared/models/clock-rotation.model";
 
 export interface IDigitProps {
-  value: number;
-}
-
-export interface IDigitState {
-  clocksRotations: IClockRotation[][];
+  clocksStates: IClockState[][];
 }
