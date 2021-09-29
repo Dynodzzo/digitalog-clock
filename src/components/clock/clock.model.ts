@@ -7,4 +7,5 @@ export interface IClockProps {
 export interface IClockState {
   randomSpinsHours: number;
   randomSpinsMinutes: number;
+  animate: boolean;
 }

@@ -5,6 +5,7 @@
   border: 1.5px solid white;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
   /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+  transition: none;
 }
 
 .wrap {
@@ -12,6 +13,10 @@
   position: relative;
   width: 45px;
   height: 45px;
+}
+
+.clock.animate .hours, .clock.animate .minutes {
+  transition: transform 5s ease-in-out;
 }
 
 .hours, .minutes {
@@ -23,7 +28,6 @@
   right: 0;
   transform-origin: bottom center;
   transform: rotate(0);
-  transition: transform 5s ease-in-out;
 }
 
 .hours {
