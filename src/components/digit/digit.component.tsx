@@ -45,7 +45,6 @@ class Digit extends Component<IDigitProps, IDigitState> {
       </div>
     );
   }
-
 }
 
 export default Digit;

@@ -2,7 +2,6 @@ import { ClockRotationType, IClockRotation } from "./models/clock-rotation.model
 
 export const MAX_SPINS: number = 3;
 export const MIN_SPINS: number = 1;
-export const MAX_SPINS_ITERATIONS: number = 10;
 
 export const ClockRotations: Map<ClockRotationType, IClockRotation> = new Map<ClockRotationType, IClockRotation>([
   [ClockRotationType.A, { type: ClockRotationType.A, minutes: 0, hours: 180 }],

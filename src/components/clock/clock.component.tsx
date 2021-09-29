@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { IClockProps, IClockState } from "./clock.model";
 import { randomInt } from "../../shared/utils";
-import { MAX_SPINS_ITERATIONS, MAX_SPINS, MIN_SPINS } from "../../shared/constants";
+import { MAX_SPINS, MIN_SPINS } from "../../shared/constants";
 import './clock.css';
 
 class Clock extends Component<IClockProps, IClockState> {
@@ -18,23 +18,11 @@ class Clock extends Component<IClockProps, IClockState> {
 
   componentDidUpdate(oldProps: IClockProps): void {
     if (oldProps.digit !== this.props.digit) {
-      const randomSpinsHours: number = this.getRandomSpin(this.state.randomSpinsHours);
-      const randomSpinsMinutes: number = this.getRandomSpin(this.state.randomSpinsMinutes);
+      const randomSpinsHours: number = randomInt(MIN_SPINS, MAX_SPINS);
+      const randomSpinsMinutes: number = randomInt(MIN_SPINS, MAX_SPINS);
 
       this.setState({ randomSpinsHours, randomSpinsMinutes, animate: true });
     }
-  }
-
-  private getRandomSpin(previousSpin: number): number {
-    let currentSpin: number = previousSpin;
-    let randomSpinCount: number = 0;
-
-    while (currentSpin === previousSpin && randomSpinCount < MAX_SPINS_ITERATIONS) {
-      currentSpin = randomInt(MIN_SPINS, MAX_SPINS);
-      randomSpinCount++;
-    }
-
-    return currentSpin;
   }
 
   private handleTransitionEnd() {
@@ -55,7 +43,6 @@ class Clock extends Component<IClockProps, IClockState> {
       </div>
     );
   }
-
 }
 
 export default Clock;
