@@ -14,10 +14,7 @@ class Digit extends Component<IDigitProps> {
               return <Clock
                 key={`clock-${clocksStatesLineIndex}${clockStateIndex}`}
                 hoursAngle={clockState.rotation.hours}
-                minutesAngle={clockState.rotation.minutes}
-                digit={clockState.rotation.type}
-                randomSpinsHours={clockState.spins.hours}
-                randomSpinsMinutes={clockState.spins.minutes} />
+                minutesAngle={clockState.rotation.minutes} />
             })
             }
           </div>

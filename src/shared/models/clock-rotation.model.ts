@@ -11,6 +11,7 @@ export interface IClockRotation {
 export interface IClockState {
   rotation: IClockRotation;
   spins: IClockSpin;
+  handleTransitionEnd: Function;
 }
 
 export interface IClockSpin {
