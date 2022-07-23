@@ -1,4 +1,4 @@
-export interface IDigitalogState {
+export type DigitalogState = {
   hours: string;
   minutes: string;
-}
+};

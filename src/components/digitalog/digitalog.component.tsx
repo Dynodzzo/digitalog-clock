@@ -1,18 +1,16 @@
 import { Component } from "react";
-import { IDigitalogState } from "./digitalog.model";
-import Digit from "../digit/digit.component";
-import './digitalog.css';
+import { DigitalogState, Digit } from "@components";
+import "./digitalog.css";
 
-class Digitalog extends Component<{}, IDigitalogState> {
-
-  intervalId: NodeJS.Timeout = setTimeout(() => { }, 0);
+export class Digitalog extends Component<{}, DigitalogState> {
+  intervalId: ReturnType<typeof setTimeout> = setTimeout(() => {}, 0);
 
   constructor(props: {}) {
     super(props);
 
     this.state = {
-      hours: '00',
-      minutes: '00'
+      hours: "00",
+      minutes: "00",
     };
   }
 
@@ -29,7 +27,7 @@ class Digitalog extends Component<{}, IDigitalogState> {
 
     this.setState({
       hours: `0${now.getHours()}`.slice(-2),
-      minutes: `0${now.getMinutes()}`.slice(-2)
+      minutes: `0${now.getMinutes()}`.slice(-2),
     });
   }
 
@@ -48,5 +46,3 @@ class Digitalog extends Component<{}, IDigitalogState> {
     );
   }
 }
-
-export default Digitalog;

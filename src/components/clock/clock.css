@@ -15,11 +15,13 @@
   height: 45px;
 }
 
-.clock.animate .hours, .clock.animate .minutes {
+.clock.animate .hours,
+.clock.animate .minutes {
   transition: transform 5s ease-in-out;
 }
 
-.hours, .minutes {
+.hours,
+.minutes {
   position: absolute;
   background-color: rgb(43, 43, 43);
   margin: auto;
@@ -51,7 +53,7 @@
   bottom: 0;
   width: 4px;
   height: 4px;
-  background: rgb(43, 43, 43);;
+  background: rgb(43, 43, 43);
   /* border: 1px solid rgb(43, 43, 43);; */
   border-radius: 100%;
   margin: auto;
