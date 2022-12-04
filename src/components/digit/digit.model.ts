@@ -1,9 +1,9 @@
-import { IClockRotation } from "@shared";
+import { ClockRotation } from "@shared";
 
-export interface IDigitProps {
+export type DigitProps = {
   value: number;
-}
+};
 
-export interface IDigitState {
-  clocksRotations: IClockRotation[][];
-}
+export type DigitState = {
+  clocksRotations: ClockRotation[][];
+};
